@@ -1,0 +1,22 @@
+<project name="online-delivery-app" default="build" basedir=".">
+
+    <!-- Define properties for source and build directories -->
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="build" />
+
+    <!-- Define a build target that creates a build directory and copies PHP files -->
+    <target name="build" description="Build the project">
+        <mkdir dir="${build.dir}" />
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*.php" />
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Define a clean target to delete the build directory -->
+    <target name="clean" description="Clean the build directory">
+        <delete dir="${build.dir}" />
+    </target>
+
+</project>
