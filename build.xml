@@ -19,4 +19,39 @@
         <delete dir="${build.dir}" />
     </target>
 
+    <!-- Define a task for PHP Mess Detector (phpmd) -->
+    <target name="phpmd" description="Run PHP Mess Detector">
+        <exec executable="vendor/bin/phpmd">
+            <arg value="${src.dir}" />
+            <arg value="text" />
+            <arg value="cleancode,codesize,controversial,design,naming,unusedcode" />
+        </exec>
+    </target>
+
+    <!-- Define a task for PHP Code Sniffer (phpcs) -->
+    <target name="phpcs" description="Run PHP Code Sniffer">
+        <exec executable="vendor/bin/phpcs">
+            <arg value="--standard=PSR12" />
+            <arg value="${src.dir}" />
+        </exec>
+    </target>
+
+    <!-- Define a task for PHP Copy/Paste Detector (phpcpd) -->
+    <target name="phpcpd" description="Run PHP Copy/Paste Detector">
+        <exec executable="vendor/bin/phpcpd">
+            <arg value="${src.dir}" />
+        </exec>
+    </target>
+
+    <!-- Define a task for PHP-CS-Fixer -->
+    <target name="php-cs-fixer" description="Run PHP-CS-Fixer">
+        <exec executable="vendor/bin/php-cs-fixer">
+            <arg value="fix" />
+            <arg value="${src.dir}" />
+        </exec>
+    </target>
+
+    <!-- Define a task to run all quality checks (phpmd, phpcs, phpcpd, php-cs-fixer) -->
+    <target name="quality-checks" depends="phpmd,phpcs,phpcpd,php-cs-fixer" description="Run all PHP quality checks" />
+
 </project>
