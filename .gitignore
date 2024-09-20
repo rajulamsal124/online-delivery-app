@@ -7,6 +7,15 @@
 /public/bundles/
 /var/
 /vendor/
+/terraform/.terraform
+/terraform/.terraform.lock.hcl
+.env
+.env.test
+.php-cs-fixer.cache
+.php-cs-fixer.dist.php
+.idea
+build.xml
+/build
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
