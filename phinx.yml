@@ -8,8 +8,8 @@ environments:
   development:
     adapter: mysql
     host: localhost
-    name: your_database_name
-    user: your_db_user
-    pass: your_db_password
+    name: jrpapp
+    user: root
+    pass: Root@2024
     port: 3306
     charset: utf8
