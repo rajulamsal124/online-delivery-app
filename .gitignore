@@ -45,3 +45,4 @@ build.xml
 # Additional ignores for large files
 terraform/.terraform/
 terraform/.terraform.lock.hcl
+.terraform/
