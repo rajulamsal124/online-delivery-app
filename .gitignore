@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -42,3 +41,7 @@ build.xml
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
+
+# Additional ignores for large files
+terraform/.terraform/
+terraform/.terraform.lock.hcl
